@@ -1,17 +1,21 @@
+
 <?php
 
 if( isset($_POST['Submit']) ) {
 
-$firstname =$_POST["First Name"];
-$lastname = $_POST["Last Name"];
-$email=$_POST["Email"];
+$firstname =$_POST["firstname"];
+$lastname = $_POST["lastname"];
+$email=$_POST["email"];
 
-$subject=$_POST["Subject"];
-$message=$_POST["Message"];
-$header="from: $name <$mail_from>";
+$std=$_POST["std"];
+$msg=$_POST["msg"];
+
 
 // Enter your email address
 $to ='shivanirmishra007@gmail.com';
+$subject='Form Submission';
+$message="First Name : ".$firstname."\n". "Last Name :" .$lastname."\n". "Standard :" .$std."\n". "Wrote the following :" ."\n\n".$msg;
+$header="From : ".$email;
 
 $send_contact=mail($to,$subject,$message,$header);
 }
